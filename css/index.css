@@ -78,6 +78,7 @@ input::placeholder {
     position: absolute;
     right: 13px;
     top: 8px;
+    cursor: pointer;
 }
 
 .profile>img {
@@ -192,4 +193,10 @@ div.buttons button.active {
 
 .buttons{
     padding-bottom: 22px;
+}
+
+.recommended h2 {
+    padding-bottom: 19px;
+    font-weight: 700;
+    font-size: 18px;
 }

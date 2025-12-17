@@ -8,10 +8,12 @@ const endpoints = {
     1: "/movie/popular",
     2: "/movie/upcoming",
     3: "/movie/top_rated",
+    searchMovie: "/search/movie?query="
 }
 
-function fetchFilms(endpoint) {
-    return fetch(BASE_URL + endpoint + "?language=ru&" + api_key)
+function fetchFilms(endpoints) {
+    const lang = endpoints.includes("=") ? "&language=ru&" : "?language=ru&"
+    return fetch(BASE_URL + endpoints + lang + api_key)
         .then(response => response.json())
         .then(data => {
             console.log(data);
@@ -23,6 +25,20 @@ function fetchFilms(endpoint) {
 const divBox = document.querySelector(".movies-no-playing");
 const buttons = document.querySelectorAll(".buttons button");
 const recommendedMovies = document.querySelector(".recommended-movies")
+const searchInput = document.querySelector("#search")
+const searchBtn = document.querySelector("#search-btn")
+
+
+// /search/movie?query=panda
+
+searchBtn.onclick = () => {
+    console.log(searchInput.value);
+    fetchFilms(endpoints.searchMovie + searchInput.value).then(movies => {
+        console.log(movies);
+    })
+}
+
+
 
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", () => {
@@ -67,7 +83,7 @@ fetchFilms(endpoints.no_playing).then(d => {
 
 // render - росовать, показать
 function renderMovies(box, films) {
-     box.innerHTML = "";
+    box.innerHTML = "";
     for (const movie of films) {
         box.innerHTML += `
         <div class="movie-top">
@@ -84,3 +100,7 @@ function renderMovies(box, films) {
         `
     }
 }
+
+fetchFilms(endpoints[0]).then(movies => {
+    renderMovies(recommendedMovies, movies.results);
+});
