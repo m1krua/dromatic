@@ -1,0 +1,16 @@
+.movie-top > img {
+    width: 168px;
+}
+
+.recommended-movies {
+}
+
+.movie-top {
+    display: flex;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.recommended h2 {
+    padding-top: 30px;
+}

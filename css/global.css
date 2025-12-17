@@ -13,3 +13,92 @@
     max-width: 1240px;
     margin: 0 auto;
 }
+
+body {
+    background: black;
+}
+
+.head-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 93px;
+    background: linear-gradient(90.53deg, rgba(0, 0, 0, 0.75) 0.45%, rgba(102, 80, 165, 0.75) 105.51%);
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 51px;
+    padding-right: 127px;
+    position: relative;
+}
+
+.bluepoint {
+    position: absolute;
+    left: 280px;
+    top: 32px;
+}
+
+
+.logo-link a {
+    color: #A1B1CB;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.logo-link h2 {
+    font-weight: 400;
+    font-size: 36px;
+    color: #FFC907;
+    padding-left: 28px;
+    font-family: "Griffy", system-ui;
+}
+
+
+.search-box {
+    position: relative;
+}
+
+.search-box input {
+    width: 324px;
+    height: 37px;
+    border-radius: 18.5px;
+    border: none;
+    padding: 19px;
+    background-color: #3B567D;
+    font-weight: 700;
+    font-size: 16px;
+    color: #A2B3CD;
+}
+
+input::placeholder {
+    color: #A2B3CD;
+}
+
+.search-box img {
+    position: absolute;
+    right: 13px;
+    top: 8px;
+    cursor: pointer;
+}
+
+.profile>img {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.profile {
+    position: relative;
+    padding-right: 32px;
+}
+
+.greenpoint {
+    position: absolute;
+    right: 34px;
+    bottom: 1px;
+}

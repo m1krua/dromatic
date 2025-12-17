@@ -2,6 +2,13 @@ const BASE_URL = 'https://api.themoviedb.org/3'
 const img_url = 'https://image.tmdb.org/t/p/original'
 const api_key = "api_key=2fa8f297328a4293f06805fe0c1b915d"
 
+// DOM elements
+const divBox = document.querySelector(".movies-no-playing");
+const buttons = document.querySelectorAll(".buttons button");
+const recommendedMovies = document.querySelector(".recommended-movies")
+const searchInput = document.querySelector("#search")
+const searchBtn = document.querySelector("#search-btn")
+
 const endpoints = {
     no_playing: "/movie/now_playing",
     0: "/trending/movie/week",
@@ -20,13 +27,6 @@ function fetchFilms(endpoints) {
             return data
         })
 }
-
-// DOM elements
-const divBox = document.querySelector(".movies-no-playing");
-const buttons = document.querySelectorAll(".buttons button");
-const recommendedMovies = document.querySelector(".recommended-movies")
-const searchInput = document.querySelector("#search")
-const searchBtn = document.querySelector("#search-btn")
 
 
 // /search/movie?query=panda
@@ -96,7 +96,7 @@ function renderMovies(box, films) {
                         <span>${movie.vote_average.toFixed(1)}</span>
                     </div>
                 </div>
-            </div>
+        </div>
         `
     }
 }
@@ -104,3 +104,12 @@ function renderMovies(box, films) {
 fetchFilms(endpoints[0]).then(movies => {
     renderMovies(recommendedMovies, movies.results);
 });
+
+
+
+searchBtn.onclick = () => {
+    const query = searchInput.value.trim()
+    if (!query) return
+    window.location.href = `search.html?query=${encodeURIComponent(query)}`
+}
+
