@@ -6,7 +6,6 @@ const box = document.querySelector('.recommended-movies');
 const input = document.querySelector('#search');
 const btn = document.querySelector('#search-btn');
 
-// query из URL
 const params = new URLSearchParams(window.location.search);
 const query = params.get('query');
 
@@ -17,13 +16,11 @@ if (query) {
         .then(d => render(d.results));
 }
 
-// поиск
 btn.onclick = () => {
     if (!input.value.trim()) return;
     window.location.href = `search.html?query=${input.value}`;
 };
 
-// рендер
 function render(movies) {
     box.innerHTML = '';
     movies.forEach(m => {

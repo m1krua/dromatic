@@ -16,12 +16,10 @@
     background: linear-gradient(-10.53deg, rgba(0, 0, 0, 0.75) 0.45%, rgba(102, 80, 165, 0.75) 105.51%);
     border-radius: 6px;
     padding: 14px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
 }
 
 .movie-top>img {
     height: 168px;
-    object-fit: cover;
     border-radius: 6px;
 }
 
@@ -49,14 +47,13 @@
 .imdb {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
 }
 
 
 .imdb span {
     font-weight: bold;
     color: #f5c518;
-    padding-bottom: 5px;
 }
 
 .overview {
