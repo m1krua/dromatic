@@ -86,7 +86,7 @@ function renderMovies(box, films) {
     box.innerHTML = "";
     for (const movie of films) {
         box.innerHTML += `
-        <div class="movie-top">
+        <div onclick="goInfo(${movie.id})" class="movie-top">
                 <img src="${img_url}${movie.poster_path}" alt="" />
                 <div class="movie-bottom">
                     <h3 >${movie.title}</h3>
@@ -105,7 +105,10 @@ fetchFilms(endpoints[0]).then(movies => {
     renderMovies(recommendedMovies, movies.results);
 });
 
-
+function goInfo(id) {
+    localStorage.setItem("id", id)
+    window.location.href = "../pages/info.html"
+}
 
 searchBtn.onclick = () => {
     const query = searchInput.value.trim()

@@ -21,7 +21,7 @@ btn.onclick = () => {
     window.location.href = `search.html?query=${input.value}`;
 };
 
-function render(movies) {
+function render(movies) { 
     box.innerHTML = '';
     movies.forEach(m => {
         box.innerHTML +=
