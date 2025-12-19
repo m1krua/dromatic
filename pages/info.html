@@ -39,14 +39,56 @@
 
     </header>
 
-    <section>
-        <img class="backdrop" src="" alt="">
-        <img class="poster" src="" alt="">
-        <h2 id="title"></h2>
-        <span class="vote_count"></span>
-        <span class="vote_average"></span>
-        <span class="release_date"></span>
-        <p class="overview"></p>
+    <section class=" container info">
+
+        <div class="backdrop"></div>
+
+        <div class="all-info">
+            <div class="info-left">
+                <img class="poster" src="" alt="">
+            </div>
+
+            <div class="info-right">
+                <h2 id="title"></h2>
+
+                <div class="rec-title">
+                    <span class="release_date"></span>
+                    <span class="genres"></span>
+                </div>
+
+                <div class="raiting">
+                    <span class="vote_average"></span>
+                    <span class="vote_count"></span>
+                    <p>голосов</p>
+                </div>
+
+                <div class="trailer">
+                    <div>
+                        <img src="../images/list.svg" alt="">
+                    </div>
+                    <div>
+                        <img src="../images/heart.svg" alt="">
+                    </div>
+                    <div>
+                        <img src="../images/save.svg" alt="">
+                    </div>
+
+                    <button class="play-btn">
+                        <img src="../images/play.svg" alt="">
+                        <a href="">Воспроизвести трейлер</a>
+                    </button>
+                </div>
+
+
+                <div class="view">
+                    <span class="tagline"></span>
+                    <h4>Обзор</h4>
+                    <p class="overview"></p>
+                </div>
+            </div>
+
+        </div>
+
     </section>
 
     <script src="../js/info.js"></script>
