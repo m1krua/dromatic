@@ -123,6 +123,7 @@ input::placeholder {
 .movie-top {
     width: 168px;
     /* height: 302px; */
+    cursor: pointer;
 }
 
 .movie-top>img {

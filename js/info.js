@@ -11,6 +11,7 @@ const info = document.querySelector(".info")
 const tagline = document.querySelector(".tagline")
 const genres = document.querySelector(".genres")
 
+
 fetch("https://api.themoviedb.org/3/movie/" + movieId + "?language=ru&api_key=2fa8f297328a4293f06805fe0c1b915d")
   .then(res => res.json())
   .then(movie => {
@@ -33,3 +34,9 @@ fetch("https://api.themoviedb.org/3/movie/" + movieId + "?language=ru&api_key=2f
       genres.innerText = "—";
     }
   })
+
+const goBackBtn = document.querySelector(".goBack");
+
+goBackBtn.onclick = () => {
+  history.back();
+};

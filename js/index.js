@@ -116,3 +116,5 @@ searchBtn.onclick = () => {
     window.location.href = `search.html?query=${encodeURIComponent(query)}`
 }
 
+
+

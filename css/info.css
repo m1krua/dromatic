@@ -134,3 +134,18 @@
     cursor: pointer;
 }
 
+.container.info {
+    position: relative;
+}
+
+.goBack {
+    position: absolute;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #E43109;
+    color: white;
+    right: 30px;
+    bottom: -152px;
+}

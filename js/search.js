@@ -1,3 +1,4 @@
+
 const BASE_URL = 'https://api.themoviedb.org/3';
 const IMG_URL = 'https://image.tmdb.org/t/p/original';
 const API_KEY = 'api_key=2fa8f297328a4293f06805fe0c1b915d';
@@ -8,6 +9,7 @@ const btn = document.querySelector('#search-btn');
 
 const params = new URLSearchParams(window.location.search);
 const query = params.get('query');
+
 
 if (query) {
     input.value = query;
@@ -21,7 +23,7 @@ btn.onclick = () => {
     window.location.href = `search.html?query=${input.value}`;
 };
 
-function render(movies) { 
+function render(movies) {
     box.innerHTML = '';
     movies.forEach(m => {
         box.innerHTML +=
@@ -42,5 +44,11 @@ function render(movies) {
                 </div>
             </div>`
             ;
+
     });
+}
+
+function goInfo(id) {
+    localStorage.setItem("id", id)
+    window.location.href = "../pages/info.html"
 }
