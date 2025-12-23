@@ -16,6 +16,7 @@
     background: linear-gradient(-10.53deg, rgba(0, 0, 0, 0.75) 0.45%, rgba(102, 80, 165, 0.75) 105.51%);
     border-radius: 6px;
     padding: 14px;
+    cursor: pointer;
 }
 
 .movie-top>img {

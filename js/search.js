@@ -47,8 +47,3 @@ function render(movies) {
 
     });
 }
-
-function goInfo(id) {
-    localStorage.setItem("id", id)
-    window.location.href = "../pages/info.html"
-}
