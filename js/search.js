@@ -47,3 +47,44 @@ function render(movies) {
 
     });
 }
+
+// После рендера фильмов
+function addClickToMovies() {
+    const movieCards = document.querySelectorAll('.movie-top');
+    movieCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const movieId = card.dataset.id;
+            if (!movieId) return;
+            localStorage.setItem('id', movieId);
+            window.location.href = 'info.html';
+        });
+    });
+}
+
+// Модификация функции render
+function render(movies) {
+    box.innerHTML = '';
+    movies.forEach(m => {
+        box.innerHTML +=
+            `<div class="movie-top" data-id="${m.id}">
+                <img src="${IMG_URL}${m.poster_path}" />
+                <div class="movie-bottom">
+                    <h3>${m.title}</h3>
+                    <div class="movie-meta">
+                        <span>${m.release_date ? m.release_date.slice(0, 4) : ''}</span>
+                        <div class="imdb">
+                            <img src="../images/imdb.svg" />
+                            <span>${m.vote_average ? m.vote_average.toFixed(1) : ''}</span>
+                        </div>
+                    </div>
+                    <p class="overview">
+                        ${m.overview ? m.overview : 'Нет описания'}
+                    </p>
+                </div>
+            </div>`;
+    });
+
+    // После вставки всех фильмов ставим клики
+    addClickToMovies();
+}
+
