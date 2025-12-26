@@ -13,11 +13,6 @@ const genres = document.querySelector(".genres")
 
 
 
-
-
-
-
-
 fetch("https://api.themoviedb.org/3/movie/" + movieId + "?language=ru&api_key=2fa8f297328a4293f06805fe0c1b915d")
   .then(res => res.json())
   .then(movie => {
@@ -51,14 +46,12 @@ goBackBtn.onclick = () => {
 const searchInput = document.querySelector("#search");
 const searchBtn = document.querySelector("#search-btn");
 
-// По кнопке
 searchBtn.onclick = () => {
     const query = searchInput.value.trim();
-    if (!query) return; // если пусто, ничего не делаем
+    if (!query) return; 
     window.location.href =`search.html?query=${encodeURIComponent(query)}`;
 }
 
-// По нажатию Enter
 searchInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
         const query = searchInput.value.trim();

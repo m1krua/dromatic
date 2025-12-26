@@ -48,7 +48,6 @@ function render(movies) {
     });
 }
 
-// После рендера фильмов
 function addClickToMovies() {
     const movieCards = document.querySelectorAll('.movie-top');
     movieCards.forEach(card => {
@@ -61,7 +60,6 @@ function addClickToMovies() {
     });
 }
 
-// Модификация функции render
 function render(movies) {
     box.innerHTML = '';
     movies.forEach(m => {
@@ -84,7 +82,6 @@ function render(movies) {
             </div>`;
     });
 
-    // После вставки всех фильмов ставим клики
     addClickToMovies();
 }
 
