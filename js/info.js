@@ -47,15 +47,57 @@ const searchInput = document.querySelector("#search");
 const searchBtn = document.querySelector("#search-btn");
 
 searchBtn.onclick = () => {
-    const query = searchInput.value.trim();
-    if (!query) return; 
-    window.location.href =`search.html?query=${encodeURIComponent(query)}`;
+  const query = searchInput.value.trim();
+  if (!query) return;
+  window.location.href = `search.html?query=${encodeURIComponent(query)}`;
 }
 
 searchInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-        const query = searchInput.value.trim();
-        if (!query) return;
-        window.location.href =`search.html?query=${encodeURIComponent(query)}`;
+  if (e.key === "Enter") {
+    const query = searchInput.value.trim();
+    if (!query) return;
+    window.location.href = `search.html?query=${encodeURIComponent(query)}`;
+  }
+});
+
+
+
+const playBtn = document.querySelector(".play-btn");
+const trailerOverlay = document.getElementById("trailerOverlay");
+const trailerFrame = document.getElementById("trailerFrame");
+const trailerClose = document.getElementById("trailerClose");
+
+playBtn.addEventListener("click", async () => {
+    try {
+        const res = await fetch(
+            `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=2fa8f297328a4293f06805fe0c1b915d`
+        );
+        const data = await res.json();
+
+        const trailer =
+            data.results.find(v => v.site === "YouTube" && v.type === "Trailer") ||
+            data.results.find(v => v.site === "YouTube" && v.type === "Video") ||
+            data.results.find(v => v.site === "YouTube" && v.type === "Teaser");
+
+        if (!trailer) {
+            alert("Видео не найдено 😢");
+            return;
+        }
+
+        trailerFrame.src = `https://www.youtube.com/embed/${trailer.key}?autoplay=1`;
+        trailerOverlay.classList.add("active");
+    } catch (err) {
+        console.error(err);
     }
+});
+
+function closeTrailer() {
+    trailerOverlay.classList.remove("active");
+    trailerFrame.src = "";
+}
+
+trailerClose.addEventListener("click", closeTrailer);
+
+trailerOverlay.addEventListener("click", (e) => {
+    if (e.target === trailerOverlay) closeTrailer();
 });
