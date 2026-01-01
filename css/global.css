@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Griffy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
@@ -181,18 +183,3 @@ input::placeholder {
     }
 }
 
-@media (max-width: 768px) {
-    body.home .head-top {
-        flex-direction: column;
-        padding: 12px;
-    }
-
-    body.home .logo-link a {
-        display: none;
-    }
-
-    body.home .search-box input {
-        height: 36px;
-        padding: 0 14px;
-    }
-}
