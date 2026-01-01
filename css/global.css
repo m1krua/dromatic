@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Griffy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
@@ -9,13 +11,13 @@
     color: white;
 }
 
+body {
+    background: black;
+}
+
 .container {
     max-width: 1240px;
     margin: 0 auto;
-}
-
-body {
-    background: black;
 }
 
 .head-top {
@@ -27,26 +29,12 @@ body {
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
 }
 
-
 .logo-link {
     display: flex;
     align-items: center;
     gap: 51px;
     padding-right: 127px;
     position: relative;
-}
-
-.bluepoint {
-    position: absolute;
-    left: 280px;
-    top: 32px;
-}
-
-
-.logo-link a {
-    color: #A1B1CB;
-    font-weight: 700;
-    font-size: 16px;
 }
 
 .logo-link h2 {
@@ -57,6 +45,17 @@ body {
     font-family: "Griffy", system-ui;
 }
 
+.logo-link a {
+    color: #A1B1CB;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.bluepoint {
+    position: absolute;
+    left: 280px;
+    top: 32px;
+}
 
 .search-box {
     position: relative;
@@ -74,8 +73,6 @@ body {
     color: #A2B3CD;
 }
 
-
-
 input::placeholder {
     color: #A2B3CD;
 }
@@ -87,6 +84,11 @@ input::placeholder {
     cursor: pointer;
 }
 
+.profile {
+    position: relative;
+    padding-right: 32px;
+}
+
 .profile>img {
     height: 56px;
     width: 56px;
@@ -94,13 +96,89 @@ input::placeholder {
     border: 3px solid white;
 }
 
-.profile {
-    position: relative;
-    padding-right: 32px;
-}
-
 .greenpoint {
     position: absolute;
     right: 34px;
     bottom: 1px;
+}
+
+/* ================================================= */
+/* ================= MOBILE ======================== */
+/* ================================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0 12px;
+    }
+
+    .head-top {
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .logo-link {
+        width: 100%;
+        padding: 0;
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .logo-link h2 {
+        font-size: 26px;
+        padding: 0;
+    }
+
+    .logo-link a {
+        display: none;
+    }
+
+    .bluepoint {
+        display: none;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .search-box input {
+        width: 100%;
+        height: 42px;
+    }
+
+    .profile {
+        padding: 0;
+    }
+
+    .profile>img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .greenpoint {
+        right: 2px;
+        bottom: 2px;
+    }
+
+    .search-box input {
+        height: 36px;
+        padding: 0 14px;
+        font-size: 14px;
+        border-radius: 16px;
+    }
+
+    .search-box img {
+        top: 9px;
+        width: 16px;
+    }
 }
